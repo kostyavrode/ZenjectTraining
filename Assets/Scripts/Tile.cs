@@ -51,6 +51,7 @@ public class Tile : MonoBehaviour
             ChooseTile();
 
             TileManager.onTileSelected?.Invoke(this);
+            EffectSound.instance.PlaySound();
         }
     }
     public void UnSelectTile()
