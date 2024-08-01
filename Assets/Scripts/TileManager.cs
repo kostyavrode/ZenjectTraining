@@ -131,7 +131,7 @@ public class TileManager : MonoBehaviour
         Debug.Log("level completed");
         if (!PlayerPrefs.HasKey("LevelDone" + levelNumber))
         {
-            PlayerPrefs.SetString("LevelDone" + levelNumber, "true");
+            PlayerPrefs.SetInt("LevelDone" + levelNumber, 3);
             PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") + 3);
             PlayerPrefs.Save();
         }

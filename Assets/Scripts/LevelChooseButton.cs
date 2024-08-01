@@ -7,13 +7,18 @@ public class LevelChooseButton : MonoBehaviour
     public int levelNumber;
     public Image[] stars;
     private bool isCanInteract;
-    private void Start()
+    private void OnEnable()
     {
         InitButton();
     }
     private void InitButton()
     {
-        if (PlayerPrefs.HasKey("LevelDone"+(levelNumber).ToString()))
+        if (PlayerPrefs.HasKey("LevelDone"+(levelNumber)) || PlayerPrefs.HasKey("LevelDone" + (levelNumber-1)))
+        {
+            isCanInteract = true;
+            GetComponent<Button>().interactable = true;
+        }
+        else if (levelNumber==0)
         {
             isCanInteract = true;
             GetComponent<Button>().interactable = true;
@@ -22,13 +27,14 @@ public class LevelChooseButton : MonoBehaviour
         {
             GetComponent<Button>().interactable = false;
         }
-        SetStars(PlayerPrefs.GetInt("Level"+levelNumber.ToString()));
+        SetStars(PlayerPrefs.GetInt("LevelDone"+levelNumber.ToString()));
+        Debug.Log(PlayerPrefs.GetInt("LevelDone" + levelNumber.ToString()));
     }
     public void SetStars(int count)
     {
         for (int i = 0; i < count; i++)
         {
-            stars[i].color = Color.yellow;
+            stars[i].color = Color.white;
         }
         for (int i = count;i<stars.Length;i++)
         {
