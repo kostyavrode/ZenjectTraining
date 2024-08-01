@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] private TileManager[] tileManagers;
     [SerializeField] private GameObject levelPassedPanel;
+    [SerializeField] private GameObject levelFailedPanel;
     public Image timeBar;
     public TMP_Text gameTimeBar;
     public TMP_Text scoreBar;
@@ -27,8 +28,13 @@ public class GameController : MonoBehaviour
         Destroy(manager);
         levelPassedPanel.SetActive(true);
     }
-    public void StopGame()
+    public void LevelFailed()
     {
         Destroy(manager);
+        levelFailedPanel.SetActive(true);
+    }
+    public void StopGame()
+    {
+        Destroy(manager.gameObject);
     }
 }

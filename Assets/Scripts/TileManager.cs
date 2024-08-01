@@ -39,7 +39,7 @@ public class TileManager : MonoBehaviour
         timeBar.fillAmount = Mathf.Clamp01((gameTime-spendedTime)/30);
         if (spendedTime > gameTime)
         {
-            LevelCompleted();
+            LevelFailed();
         }
     }
     public void OnInit(GameController gameController)
@@ -136,6 +136,10 @@ public class TileManager : MonoBehaviour
             PlayerPrefs.Save();
         }
         gameController.LevelPassed();
+    }
+    private void LevelFailed()
+    {
+        gameController.LevelFailed();
     }
     private IEnumerator WaitForUnSelectTile(Tile tile)
     {
