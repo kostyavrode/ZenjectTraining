@@ -34,12 +34,12 @@ public class SoundManager : MonoBehaviour
         if (isSoundEnabled)
         {
             audioSource.Play();
-            soundText.text = "Sound On";
+            soundText.text = "On";
         }
         else
         {
             audioSource.Pause();
-            soundText.text = "Sound Off";
+            soundText.text = "Off";
         }
     }
     public void AudioButton()

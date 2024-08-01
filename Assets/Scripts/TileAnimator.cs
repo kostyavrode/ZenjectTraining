@@ -71,6 +71,7 @@ public class TileAnimator : MonoBehaviour
     }
     private void DisableObject()
     {
+        GetComponent<Tile>().ShowNeighbours();
         gameObject.SetActive(false);
     }
     private static IEnumerator _Scale(Transform scaleThis, Vector3 toThis, float delay, float time,
