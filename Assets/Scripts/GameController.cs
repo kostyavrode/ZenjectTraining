@@ -27,4 +27,8 @@ public class GameController : MonoBehaviour
         Destroy(manager);
         levelPassedPanel.SetActive(true);
     }
+    public void StopGame()
+    {
+        Destroy(manager);
+    }
 }

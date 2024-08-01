@@ -90,7 +90,8 @@ public class TileManager : MonoBehaviour
         Vector3 difference = Vector3.Lerp(selectedTiles[0].transform.position, selectedTiles[1].transform.position, 0.5f);
         selectedTiles[0].GetComponent<TileAnimator>().AnimateMoveTo(difference, 0.3f);
         selectedTiles[1].GetComponent<TileAnimator>().AnimateMoveTo(difference, 0.3f);
-        scoreBar.text = (score + UnityEngine.Random.Range(50, 100)).ToString();
+        score+= UnityEngine.Random.Range(5, 10);
+        scoreBar.text = (score).ToString();
         accordance += 1;
         accordanceBar.text=accordance.ToString();
         ClearArray();

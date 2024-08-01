@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.28103057, y: 0.047738552, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.13, y: 0.13, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -103,11 +103,11 @@ MonoBehaviour:
   neighbours: []
   sprite: {fileID: 3275635637426026432}
   sprites:
-  - {fileID: 21300000, guid: 9fef7afad04f1774c980ba24f1e91935, type: 3}
-  - {fileID: 21300000, guid: 889647216158b3c46a58ab09e6f0e5ee, type: 3}
-  - {fileID: 21300000, guid: db00c240242b1a04d8fedb695923189d, type: 3}
-  - {fileID: 21300000, guid: 9afd3cb8753eb0e4b811ba19de39eb71, type: 3}
-  - {fileID: 21300000, guid: 6cb52726ca2592d448a247fe622b439d, type: 3}
+  - {fileID: 21300000, guid: 4cd73a99ae71eb2488a3a6cbeb3f20ce, type: 3}
+  - {fileID: 21300000, guid: 1c4addda008b64148acb9a0795f7d333, type: 3}
+  - {fileID: 21300000, guid: a898a2e5c8b490b4eb0c467dadab375a, type: 3}
+  - {fileID: 21300000, guid: ff4502b94930d57499d1c6ce9eae352f, type: 3}
+  - {fileID: 21300000, guid: 385086dfc4bc750409c30dda2cd5c247, type: 3}
   isCanInteract: 1
   isMerged: 0
 --- !u!114 &5861661122834758944
