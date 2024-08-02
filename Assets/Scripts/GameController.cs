@@ -37,4 +37,8 @@ public class GameController : MonoBehaviour
     {
         Destroy(manager.gameObject);
     }
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
 }
