@@ -34,9 +34,10 @@ public class TileManager : MonoBehaviour
     }
     private void Update()
     {
+
         spendedTime += Time.deltaTime;
         gameTimeBar.text= (gameTime- Math.Round(spendedTime)).ToString();
-        timeBar.fillAmount = Mathf.Clamp01((gameTime-spendedTime)/30);
+        timeBar.fillAmount = Mathf.Clamp01((gameTime-spendedTime)/gameTime);
         if (spendedTime > gameTime)
         {
             LevelFailed();
@@ -45,6 +46,10 @@ public class TileManager : MonoBehaviour
     public void OnInit(GameController gameController)
         {
     this.gameController = gameController;
+        if (PlayerPrefs.HasKey("Buy1"))
+        {
+            gameTime *= 2;
+        }
         timeBar=gameController.timeBar;
         gameTimeBar=gameController.gameTimeBar;
         scoreBar=gameController.scoreBar;
@@ -132,7 +137,7 @@ public class TileManager : MonoBehaviour
         if (!PlayerPrefs.HasKey("LevelDone" + levelNumber))
         {
             PlayerPrefs.SetInt("LevelDone" + levelNumber, 3);
-            PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") + 3);
+            PlayerPrefs.SetInt("Money", PlayerPrefs.GetInt("Money") + 30);
             PlayerPrefs.Save();
         }
         gameController.LevelPassed();
